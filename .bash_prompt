@@ -1,0 +1,28 @@
+reset="\e[0m";
+bold="";
+black="\e[0;30m";
+blue="\e[0;34m";
+cyan="\e[0;36m";
+green="\e[0;32m";
+orange="\e[1;31m";
+purple="\e[0;35m";
+red="\e[0;31m";
+violet="\e[0;35m";
+white="\e[0;37m";
+yellow="\e[0;33m";
+
+userStyle="${orange}";
+hostStyle="${yellow}";
+
+# Set the terminal title and prompt.
+PS1="\[\033]0;\W\007\]"; # working directory base name
+PS1+="\[${bold}\]\n"; # newline
+PS1+="\[${userStyle}\]\u"; # username
+PS1+="\[${white}\] at ";
+PS1+="\[${hostStyle}\]\h"; # host
+PS1+="\[${white}\] in ";
+PS1+="\[${green}\]\w"; # working directory full path
+PS1+="\n";
+PS1+="\[${white}\]\$ \[${reset}\]"; # `$` (and reset color)
+
+export PS1;
