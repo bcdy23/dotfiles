@@ -100,8 +100,8 @@ augroup END
 function OpenNetrw()
         :Lexplore
 
-        set relativenumber
-        set number
+        setlocal relativenumber
+        setlocal number
 
         exe "2 wincmd w"
 endfunction

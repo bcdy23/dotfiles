@@ -7,5 +7,5 @@ alias lsh="ls -a --color"
 
 alias cls="clear"
 
-alias cninja="clear && cd build && cmake -G Ninja .. && ninja"
+alias cninja="clear && cd build && cmake -G Ninja .. && ninja && cd .."
 alias nintest="clear && ninja && ninja test"
