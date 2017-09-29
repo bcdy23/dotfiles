@@ -11,10 +11,15 @@ set lazyredraw			"Redraw screen only when needed
 
 if !has('gui_running')
         "Set cursor for terminal
-        let &t_ti.="\e[1 q"
-        let &t_EI.="\e[1 q"
-        let &t_SI.="\e[5 q"
-        let &t_te.="\e[0 q"
+        if exists('$TMUX')
+                let &t_SI = "\<Esc>Ptmux;\<Esc>\e[5 q\<Esc>\\"
+                let &t_EI = "\<Esc>Ptmux;\<Esc>\e[1 q\<Esc>\\"
+       else
+                let &t_ti.="\e[1 q"
+                let &t_EI.="\e[1 q"
+                let &t_SI.="\e[5 q"
+                let &t_te.="\e[0 q"
+        endif
 
         set t_Co=16
         let g:solarized_termcolors=16
@@ -25,6 +30,8 @@ if !has('gui_running')
         "Set focus split status bar to cyan
         hi StatusLine ctermfg=6
         hi StatusLineNC ctermfg=3
+
+        hi ColorColumn ctermbg=6
 endif
 
 set showmatch			"Show matching group for (){}[]
