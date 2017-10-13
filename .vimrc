@@ -75,7 +75,7 @@ let g:netrw_liststyle       = 3         "Change to tree list
 let g:netrw_sort_sequence   = '[\/]$,*' "Sort by directories and file
 let g:netrw_browse_spilt    = 4         "Open in previous window
 let g:netrw_banner          = 0         "Disable Banner
-let g:netrw_winsize         = 15        "Set Split to 20%
+let g:netrw_winsize         = 20        "Set Split to 20%
 let g:netrw_special_syntax  = 1         "Allow highlighting for different files
 
 au BufWinLeave  *.*   mkview
