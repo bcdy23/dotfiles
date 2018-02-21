@@ -1,6 +1,9 @@
 export TERM=cygwin
 export CTEST_OUTPUT_ON_FAILURE=1
 
+# Setting for Tmux -c option
+export CHERE_INVOKING=1
+
 eval "$(dircolors -b ${HOME}/dir_colors)"
 set -o vi
 
@@ -18,7 +21,6 @@ export HISTFILESIZE="${HISTSIZE}"
 
 # Append to history file rather than overwrite
 shopt -s histappend
-
 
 # Aliases
 if [ -f "${HOME}/.bash_aliases" ]; then

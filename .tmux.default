@@ -1,0 +1,9 @@
+tmux split-window -h
+tmux split-window -v
+
+tmux select-pane -U
+tmux send-keys "lsh" C-m
+
+tmux select-pane -L
+tmux send-keys "cls" C-m
+tmux send-keys "vim" C-m

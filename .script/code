@@ -1,0 +1,33 @@
+#!/bin/sh
+
+# Get Session Name using Folder or Provided Argument
+strSessionName="${PWD##*/}"
+
+if [ ! -z "$1" ]; then
+        strSessionName="$1"
+fi
+
+# If not Session Exist , Create New Tmux Session
+if !(tmux has-session -t $strSessionName >/dev/null 2>&1); then
+        # Check if project exist in workspace
+        if [ -d "$WORKSPACE"/"$strSessionName" ]; then
+                cd "$WORKSPACE"/"$strSessionName"
+        fi
+        
+        # Load Config file if exist
+        strSourceFile=~/.tmux.default
+
+        if [ -e "$PWD/.tmux" ]; then
+                strSourceFile="$PWD"/.tmux
+        fi
+
+        # Create new session and load config file
+        tmux new-session -x 999 -y 999 -s "$strSessionName" -n "$strSessionName" -d
+        tmux send-keys -t "$strSessionName" $strSourceFile C-m
+fi
+
+if [ -z "$TMUX" ]; then
+        tmux attach -t "$strSessionName"
+else
+        tmux switch-client -t "$strSessionName"
+fi

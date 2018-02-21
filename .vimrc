@@ -90,6 +90,9 @@ nnoremap <leader>j <C-W><C-J>
 nnoremap <leader>k <C-W><C-K>
 nnoremap <leader>l <C-W><C-L>
 
+"Mapping to create comment
+nnoremap <leader>c :call CreateCommentBlock()<CR>
+
 "Mapping to replace : with ;
 nnoremap ;  :
 
@@ -111,4 +114,18 @@ function OpenNetrw()
         setlocal number
 
         exe "2 wincmd w"
+endfunction
+
+"Add Comment Blocks
+function CreateCommentBlock()
+        let g:intCommentLen = 37
+
+        let strText         = input("Comment : ")
+
+        let strCommentStart = "##" . repeat(" ", g:intCommentLen - 4) ."##"
+        let strCommentEnd   = repeat("#", g:intCommentLen)
+
+        let intLine         = line(".")
+
+        call append(intLine - 1, [strCommentStart, strCommentEnd])
 endfunction
