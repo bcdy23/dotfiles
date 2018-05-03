@@ -62,13 +62,13 @@ set statusline  +=%m]       "Show Modified Flag
 set statusline  +=%=        "Right Align items
 set statusline  +=[%6(%c,%l/%L%)]   "Show Current Line and Total Lines
 
-set foldmethod  =indent "Set Coding folding to follow indentation
-set foldlevelstart  =99 "Disable folding on open
-set foldnestmax =1      "Disbale nested folding
+set foldmethod  =indent     "Set Coding folding to follow indentation
+set foldlevelstart  =99     "Disable folding on open
+set foldnestmax =1          "Disbale nested folding
 
-set colorcolumn =74     "Set Indicator to show 74 character limit
+set colorcolumn =74         "Set Indicator to show 74 character limit
 
-set autochdir                           "Set to auto change directory
+set autochdir               "Set to auto change directory
 
 "Settings for netrw file explorer
 let g:netrw_liststyle       = 3         "Change to tree list
@@ -98,6 +98,9 @@ nnoremap ;  :
 
 "Mapping to clear highlighted values
 map <silent> <leader>/ :nohlsearch<CR>
+
+"Mapping for replaying q macros
+nnoremap <leader>q @q
 
 " optional reset cursor on start:
 augroup myCmds
