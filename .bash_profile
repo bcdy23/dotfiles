@@ -36,6 +36,16 @@ INKSCAPE="${PROGRAM}/inkscape"
 #ENV for Latex
 LATEX="${PROGRAM}/texlive/bin/win32"
 
+#ENV for R
+R_LANG="${PROGRAM}/R/bin"
+
+#ENV for FFMPEG
+FFMPEG="${PROGRAM}/ffmpeg"
+
+#ENV for youtube_dl
+YOUTUBE_DL="${PROGRAM}/youtube_dl"
+
+PATH="$R_LANG:$FFMPEG:$YOUTUBE_DL:$PATH"
 PATH="$BASH_SCRIPT:$C_NINJA:$C_MAKE:$JAVA_HOME/bin:$PDF:$LYNX:$LATEX:$PATH"
 
 # source the users bashrc if it exists
