@@ -32,6 +32,6 @@ if [ -f "${HOME}/.bash_prompt" ]; then
 fi
 
 # Load CA Cert if file does not exists
-if [ ! -f "/etc/gitconfig" ]; then
-        git config --system http.sslcainfo "${MINGW}/../ssl/certs/ca-bundle.crt"
-fi
+#if [ ! -f "/etc/gitconfig" ]; then
+#        git config --system http.sslcainfo "${MINGW}/../ssl/certs/ca-bundle.crt"
+#fi
