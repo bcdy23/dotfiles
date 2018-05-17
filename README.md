@@ -5,15 +5,16 @@ Dot Files Configuration for Linux/MSys2
 Antergos 
 
 ## Linux Applications
-Vim  
-Tmux  
-Pale Moon  
-Inkscape  
-Zathura  
-i3-gaps  
-urxvt terminal  
+conky  
 cmus  
+i3-gaps  
+inkscape  
+pale moon  
+tmux  
+urxvt terminal  
+vim  
 youtube-dl  
+zathura  
 
 ## Fonts
 Inconsolata (Nerd Fonts)
